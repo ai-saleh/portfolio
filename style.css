@@ -4,13 +4,16 @@
   --primary-color: #e68369;
   --dark-color: #373a40;
   --grey-color: #686d76;
-  --background-color: #eeeeee;
+  --white-color: #EEEEEE;
+  --bck-dark-color: #ECCEAE;
+  --bck-light-color: #FBF6E2
 }
 
 body {
   font-family: "Afacad Flux", sans-serif;
   font-weight: 400;
   color: var(--grey-color);
+  background: var(--bck-light-color);
 }
 
 img {
@@ -95,7 +98,7 @@ a:hover {
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--background-color);
+    background: var(--bck-dark-color);
   }
 
   .main-header .navbar-nav > li + li {
@@ -152,7 +155,7 @@ a:hover {
   transition: ease all 0.3s;
   display: inline-block;
   background: var(--primary-color);
-  color: var(--background-color);
+  color: var(--white-color);
   box-shadow: 6px 6px 0 -1px var(--dark-color);
 }
 
