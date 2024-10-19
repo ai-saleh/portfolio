@@ -1,0 +1,35 @@
+/* Project slider styles */
+.project-slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.project-slider .swiper-slide {
+  width: 100%;
+  transition: transform 0.3s ease;
+  opacity: 1 !important; /* Ensure all slides are visible */
+}
+
+.project-slider .swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Styles for desktop */
+@media (min-width: 768px) {
+  .project-slider .swiper-slide-active {
+    z-index: 1; /* Ensure active slide is on top */
+  }
+}
+
+/* Styles for mobile */
+@media (max-width: 767px) {
+  .project-slider {
+    overflow: hidden;
+  }
+
+  .project-slider .swiper-slide {
+    width: 100%;
+  }
+}

@@ -52,7 +52,7 @@
   color: rgb(var(--dark-color));
 }
 
-/* Styles for desktop/mobile views and Swiper */
+/* Styles for desktop/mobile views */
 .ftb-desktop-view {
   display: flex;
   flex-wrap: wrap;
@@ -60,18 +60,6 @@
 
 .ftb-mobile-view {
   display: none;
-}
-
-/* Swiper pagination styles */
-.swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background: rgb(var(--dark-color));
-  opacity: 0.5;
-}
-
-.swiper-pagination-bullet-active {
-  opacity: 1;
 }
 
 /* Media Queries */
@@ -97,16 +85,6 @@
 
   .feature-box h5 {
     font-size: 21px;
-  }
-
-  .ftb-mobile-view .swiper-slide {
-    width: 80%; /* Adjust this value to control how much of the next slide is visible */
-    transition: opacity 0.3s ease;
-    opacity: 0.5; /* Make non-active slides semi-transparent */
-  }
-
-  .ftb-mobile-view .swiper-slide-active {
-    opacity: 1; /* Make the active slide fully opaque */
   }
 }
 
@@ -143,14 +121,7 @@
 
 /* Resize skills section image due to its large size */
 #skills-img {
-  width: 80%;
-  padding-top: 120px;
-}
-
-@media (max-width: 991px) {
-  #skills-img {
-    padding-top: 0;
-  }
+  width: 90%;
 }
 
 /* Colors for each box */
