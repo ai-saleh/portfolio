@@ -1,0 +1,121 @@
+/* Feature box styling */
+:root {
+    --icon-size: 70px;
+}
+
+.feature-box {
+    display: flex;
+    align-items: flex-start;
+    padding: 40px;
+    height: 192px; /* Set a fixed height - adjust as needed */
+    border: 3px solid rgb(var(--dark-color));
+    transition: all 0.3s ease;
+  }
+  
+  .feature-box:hover {
+    box-shadow: 6px 6px 0 -1px rgb(var(--dark-color));
+  }
+  
+  .feature-box .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    min-width: var(--icon-size); /* Prevent icon from shrinking */
+    margin-right: 20px; /* Add space between icon and content */
+    font-size: 32px;
+    line-height: 1;
+    color: rgb(var(--dark-color));
+    background: rgb(var(--white-color));
+    border: 3px solid rgb(var(--dark-color));
+  }
+  
+  .feature-box .content {
+    flex-grow: 1; /* Allow content to fill remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    overflow: hidden; /* In case of content overflow */
+  }
+  
+  .feature-box h5 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(var(--dark-color));
+  }
+  
+  .feature-box p {
+    margin: 0;
+    font-size: 16px;
+    color: rgb(var(--dark-color));
+  }
+  
+  /* Styles for desktop/mobile views and Swiper */
+  .ftb-desktop-view {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .ftb-mobile-view {
+    display: none;
+  }
+  
+  /* Swiper pagination styles */
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: rgb(var(--dark-color));
+    opacity: 0.5;
+  }
+  
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 991px) {
+    .feature-box {
+      padding: 30px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .ftb-desktop-view {
+      display: none;
+    }
+    
+    .ftb-mobile-view {
+      display: block;
+    }
+  
+    .feature-box {
+      padding: 20px;
+      height: 160px; /* Smaller height for mobile - adjust as needed */
+    }
+  
+    .feature-box h5 {
+      font-size: 21px;
+    }
+  
+    .ftb-mobile-view .swiper-slide {
+      width: 80%; /* Adjust this value to control how much of the next slide is visible */
+      transition: opacity 0.3s ease;
+      opacity: 0.5; /* Make non-active slides semi-transparent */
+    }
+  
+    .ftb-mobile-view .swiper-slide-active {
+      opacity: 1; /* Make the active slide fully opaque */
+    }
+  }
+
+/* Colors for each box */
+.ftb-bg-1 { background-color: blanchedalmond; }
+.ftb-bg-2 { background-color: bisque; }
+.ftb-bg-3 { background-color: mistyrose; }
+.ftb-bg-4 { background-color: navajowhite; }
+.ftb-bg-5 { background-color: moccasin; }
+.ftb-bg-6 { background-color: oldlace; }
+.ftb-bg-7 { background-color: peachpuff; }
+.ftb-bg-8 { background-color: papayawhip; }

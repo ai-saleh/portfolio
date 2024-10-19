@@ -14,8 +14,10 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="anims.css" />
+    <link rel="stylesheet" href="feature-box.css" />
   </head>
 
   <body>
@@ -41,10 +43,13 @@
                 <a href="#about" class="nav-link">About Me</a>
               </li>
               <li>
+                <a href="#services" class="nav-link">Services</a>
+              </li>
+              <li>
                 <a href="#skills" class="nav-link">Skills</a>
               </li>
               <li>
-                <a href="#pjcts" class="nav-link">Projects</a>
+                <a href="#projects" class="nav-link">Projects</a>
               </li>
             </ul>
           </div>
@@ -72,7 +77,7 @@
     <!-- Main -->
     <main>
       <!-- Section: Home -->
-      <section id="home" class="home-section bg-grey">
+      <section id="home" class="home-section bg-beige">
         <div class="container">
           <!-- Floating Icons -->
           <div class="anim-elements">
@@ -155,6 +160,32 @@
           </div>
         </div>
       </section>
+
+      <!-- Section: Services -->
+      <section id="services" class="section with-background bg-beige">
+        <div class="container">
+          <div class="section-heading">
+            <h3>My Services</h3>
+          </div>
+          <div class="row gy-5 ftb-desktop-view">
+            <!-- Desktop view will be populated by JavaScript -->
+          </div>
+          <div class="swiper-container ftb-mobile-view">
+            <div class="swiper-wrapper">
+              <!-- Mobile view will be populated by JavaScript -->
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <p>© 2024 Ahmed Saleh Portfolio. All rights reserved.</p>
+        <p>Graphics by <a href="https://www.freepik.com" target="_blank">Freepik</a></p>
+      </footer>
+      
     </main>
 
     <script
@@ -168,6 +199,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

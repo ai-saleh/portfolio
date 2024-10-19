@@ -1,3 +1,4 @@
+// Navbar functionality
 $(document).ready(function () {
   // Function to check if we're in mobile view
   function isMobileView() {
@@ -64,7 +65,7 @@ $(document).ready(function () {
   updateHeaderClass();
 });
 
-// Document Ready
+// Typing effect functionality
 $(document).ready(function () {
   // Typing Animation
   new Typed("#type-it", {
@@ -72,4 +73,113 @@ $(document).ready(function () {
     typeSpeed: 75,
     loop: true,
   });
+});
+
+// Feature box functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const services = [
+    {
+      icon: 'bx bx-analyse',
+      title: 'Data Analysis',
+      description: 'Transform raw data into insightful reports.'
+    },
+    {
+      icon: 'bx bx-line-chart',
+      title: 'Data Visualization',
+      description: 'Create compelling dashboards and charts.'
+    },
+    {
+      icon: 'bx bx-data',
+      title: 'Database Management',
+      description: 'Optimize and maintain databases for peak performance.'
+    },
+    {
+      icon: 'bx bx-bar-chart-alt-2',
+      title: 'Business Intelligence',
+      description: 'Implement and manage BI tools to drive strategic decisions.'
+    }
+    // You can add more services here in the future
+  ];
+
+  const desktopView = document.querySelector('.ftb-desktop-view');
+  const mobileView = document.querySelector('.ftb-mobile-view .swiper-wrapper');
+
+  // Define color classes
+  const colorClasses = ['ftb-bg-1', 'ftb-bg-2', 'ftb-bg-3', 'ftb-bg-4', 'ftb-bg-5', 'ftb-bg-6', 'ftb-bg-7', 'ftb-bg-8'];
+  // You can add more color classes here in the future
+
+  // Fisher-Yates shuffle algorithm
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  // Shuffle the color classes
+  let shuffledColors = shuffleArray([...colorClasses]);
+
+  services.forEach((service, index) => {
+    // Reshuffle colors if we've used them all
+    if (index % colorClasses.length === 0) {
+      shuffledColors = shuffleArray([...colorClasses]);
+    }
+
+    const colorClass = shuffledColors[index % colorClasses.length];
+    const featureBox = `
+      <div class="feature-box ${colorClass}">
+        <div class="icon"><i class="${service.icon}"></i></div>
+        <div class="content">
+          <h5>${service.title}</h5>
+          <p>${service.description}</p>
+        </div>
+      </div>
+    `;
+
+    // Append to desktop view
+    desktopView.insertAdjacentHTML('beforeend', `
+      <div class="col-md-6">
+        ${featureBox}
+      </div>
+    `);
+
+    // Append to mobile view
+    mobileView.insertAdjacentHTML('beforeend', `
+      <div class="swiper-slide">
+        ${featureBox}
+      </div>
+    `);
+  });
+
+  let swiper = null;
+  const mobileBreakpoint = 768; // Adjust this value based on your CSS breakpoint
+
+  function initSwiper() {
+    if (window.innerWidth < mobileBreakpoint && !swiper) {
+      swiper = new Swiper('.ftb-mobile-view', {
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+    } else if (window.innerWidth >= mobileBreakpoint && swiper) {
+      swiper.destroy(true, true);
+      swiper = null;
+    }
+  }
+
+  // Initialize Swiper on load
+  initSwiper();
+
+  // Reinitialize Swiper on window resize
+  window.addEventListener('resize', initSwiper);
 });

@@ -3,10 +3,10 @@
 
 :root {
   --primary-color: 230, 131, 105;
+  --secondary-color: 255, 200, 0;
   --dark-color: 30, 32, 30;
   --grey-color: 60, 61, 55;
-  --white-color: 238, 238, 238;
-  --yellow-color: 255, 200, 0;
+  --white-color: 250, 247, 240;
   --bck-dark-color: 236, 206, 174;
   --bck-light-color: 251, 246, 226;
 }
@@ -178,14 +178,6 @@ a:hover {
   box-shadow: none;
 }
 
-.bg-grey {
-  background: rgba(var(--bck-dark-color), 0.25);
-}
-
-.bg-dark {
-  background: rgb(var(--dark-color)) !important;
-}
-
 main {
   position: relative;
   z-index: 1;
@@ -270,7 +262,7 @@ main {
   width: 100%;
   /* height: 2px; */
   height: 3px;
-  background-color: rgb(var(--yellow-color));
+  background-color: rgb(var(--secondary-color));
 }
 
 /* Styling for Typed.js cursor */
@@ -374,6 +366,75 @@ main {
   }
 }
 
+/* Sections with background */
+.section.with-background {
+  position: relative;
+  width: 100%;
+  min-height: 400px; /* Changed from fixed height to min-height */
+  overflow: hidden;
+}
+
+.section.with-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('assets/bck/orange-and-yellow-sky-during-sunset-gy8dDhxsn6g.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  z-index: 1; /* Added z-index */
+}
+
+/* New rule to ensure all direct children of #services are above the background */
+.section.with-background > * {
+  position: relative;
+  z-index: 2;
+}
+
+.section-heading {
+  padding-bottom: 60px;
+  text-align: center;
+  opacity: 1;
+  color: rgb(var(--dark-color)); /* Ensure text color contrasts with the background */
+}
+
+@media (max-width: 991px) {
+  .section-heading {
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-heading {
+    padding-bottom: 30px;
+  }
+}
+
+.section-heading h3 {
+  font-size: 50px;
+  margin: 0;
+  color: rgb(var(--dark-color));
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 991px) {
+  .section-heading h3 {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-heading h3 {
+    font-size: 40px;
+  }
+}
+
+/* About */
 .about-text p {
   font-size: 18px;
 }
@@ -396,4 +457,13 @@ main {
   .stats-item {
     margin-bottom: 0; /* Remove bottom margin on larger screens */
   }
+}
+
+/* Background Colors */
+.bg-dark-grey {
+  background: rgb(var(--dark-color));
+}
+
+.bg-beige {
+  background-color: rgb(var(--bck-light-color));
 }
