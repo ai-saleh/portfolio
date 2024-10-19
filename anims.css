@@ -1,137 +1,199 @@
 /* Container for animated elements */
 .anim-elements {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
 }
 
 /* Common styles for animated elements */
 .anim-elements .anim-element {
-    position: absolute;
-    font-size: 30px;
-    opacity: 0.8;
+  position: absolute;
+  font-size: 30px;
+  opacity: 0.8;
 }
 
 @media (max-width: 767px) {
-    .anim-elements .anim-element {
-        position: absolute;
-        font-size: 24px;
-    }
+  .anim-elements .anim-element {
+    position: absolute;
+    font-size: 24px;
+  }
 }
 
 /* Individual element positioning and animation */
 .anim-elements .anim-element:nth-child(1) {
-    top: 12%;
-    left: 15%;
-    color: tomato;
-    animation: anim_a 15s infinite linear alternate;
+  top: 12%;
+  left: 15%;
+  color: tomato;
+  animation: anim_a 15s infinite linear alternate;
 }
 
 .anim-elements .anim-element:nth-child(2) {
-    top: 25%;
-    left: 45%;
-    color: orange;
-    animation: anim_b 17s infinite linear alternate;
+  top: 25%;
+  left: 45%;
+  color: orange;
+  animation: anim_b 17s infinite linear alternate;
 }
 
 .anim-elements .anim-element:nth-child(3) {
-    top: 18%;
-    left: 70%;
-    color: steelblue;
-    animation: anim_c 19s infinite linear alternate;
+  top: 18%;
+  left: 70%;
+  color: steelblue;
+  animation: anim_c 19s infinite linear alternate;
 }
 
 .anim-elements .anim-element:nth-child(4) {
-    top: 65%;
-    left: 25%;
-    color: palevioletred;
-    animation: anim_d 16s infinite linear alternate;
+  top: 65%;
+  left: 25%;
+  color: palevioletred;
+  animation: anim_d 16s infinite linear alternate;
 }
 
 .anim-elements .anim-element:nth-child(5) {
-    top: 75%;
-    left: 60%;
-    color: orchid;
-    animation: anim_e 18s infinite linear alternate;
+  top: 75%;
+  left: 60%;
+  color: orchid;
+  animation: anim_e 18s infinite linear alternate;
 }
 
 .anim-elements .anim-element:nth-child(6) {
-    top: 35%;
-    left: 80%;
-    color: coral;
-    animation: anim_f 20s infinite linear alternate;
+  top: 35%;
+  left: 80%;
+  color: coral;
+  animation: anim_f 20s infinite linear alternate;
 }
 
 .anim-elements .anim-element:nth-child(7) {
-    top: 85%;
-    left: 10%;
-    color: lightskyblue;
-    animation: anim_g 14s infinite linear alternate;
+  top: 85%;
+  left: 10%;
+  color: lightskyblue;
+  animation: anim_g 14s infinite linear alternate;
 }
 
 .anim-elements .anim-element:nth-child(8) {
-    top: 50%;
-    left: 50%;
-    color: indianred;
-    animation: anim_h 21s infinite linear alternate;
+  top: 50%;
+  left: 50%;
+  color: indianred;
+  animation: anim_h 21s infinite linear alternate;
 }
 
 /* Keyframe animations */
 @keyframes anim_a {
-    0% {transform: translate(0, 0) rotate(0) scale(1);}
-    25% {transform: translate(100px, 50px) rotate(45deg) scale(1.1);}
-    50% {transform: translate(-50px, 100px) rotate(90deg) scale(0.9);}
-    75% {transform: translate(150px, -75px) rotate(135deg) scale(1.2);}
-    100% {transform: translate(0, 0) rotate(180deg) scale(1);}
+  0% {
+    transform: translate(0, 0) rotate(0) scale(1);
+  }
+  25% {
+    transform: translate(100px, 50px) rotate(45deg) scale(1.1);
+  }
+  50% {
+    transform: translate(-50px, 100px) rotate(90deg) scale(0.9);
+  }
+  75% {
+    transform: translate(150px, -75px) rotate(135deg) scale(1.2);
+  }
+  100% {
+    transform: translate(0, 0) rotate(180deg) scale(1);
+  }
 }
 
 @keyframes anim_b {
-    0% {transform: translate(0, 0) rotate(0) scale(1);}
-    33% {transform: translate(-120px, 80px) rotate(60deg) scale(0.8);}
-    66% {transform: translate(80px, -120px) rotate(120deg) scale(1.1);}
-    100% {transform: translate(0, 0) rotate(180deg) scale(1);}
+  0% {
+    transform: translate(0, 0) rotate(0) scale(1);
+  }
+  33% {
+    transform: translate(-120px, 80px) rotate(60deg) scale(0.8);
+  }
+  66% {
+    transform: translate(80px, -120px) rotate(120deg) scale(1.1);
+  }
+  100% {
+    transform: translate(0, 0) rotate(180deg) scale(1);
+  }
 }
 
 @keyframes anim_c {
-    0% {transform: translate(0, 0) rotate(0) scale(1);}
-    50% {transform: translate(200px, 100px) rotate(90deg) scale(1.2);}
-    100% {transform: translate(-150px, -150px) rotate(180deg) scale(0.9);}
+  0% {
+    transform: translate(0, 0) rotate(0) scale(1);
+  }
+  50% {
+    transform: translate(200px, 100px) rotate(90deg) scale(1.2);
+  }
+  100% {
+    transform: translate(-150px, -150px) rotate(180deg) scale(0.9);
+  }
 }
 
 @keyframes anim_d {
-    0% {transform: translate(0, 0) rotate(0) scale(1);}
-    25% {transform: translate(-80px, 120px) rotate(45deg) scale(1.1);}
-    75% {transform: translate(100px, -80px) rotate(135deg) scale(0.9);}
-    100% {transform: translate(0, 0) rotate(180deg) scale(1);}
+  0% {
+    transform: translate(0, 0) rotate(0) scale(1);
+  }
+  25% {
+    transform: translate(-80px, 120px) rotate(45deg) scale(1.1);
+  }
+  75% {
+    transform: translate(100px, -80px) rotate(135deg) scale(0.9);
+  }
+  100% {
+    transform: translate(0, 0) rotate(180deg) scale(1);
+  }
 }
 
 @keyframes anim_e {
-    0% {transform: translate(0, 0) rotate(0) scale(1);}
-    33% {transform: translate(150px, -100px) rotate(60deg) scale(1.2);}
-    66% {transform: translate(-120px, 80px) rotate(120deg) scale(0.8);}
-    100% {transform: translate(0, 0) rotate(180deg) scale(1);}
+  0% {
+    transform: translate(0, 0) rotate(0) scale(1);
+  }
+  33% {
+    transform: translate(150px, -100px) rotate(60deg) scale(1.2);
+  }
+  66% {
+    transform: translate(-120px, 80px) rotate(120deg) scale(0.8);
+  }
+  100% {
+    transform: translate(0, 0) rotate(180deg) scale(1);
+  }
 }
 
 @keyframes anim_f {
-    0% {transform: translate(0, 0) rotate(0) scale(1);}
-    50% {transform: translate(-180px, -120px) rotate(90deg) scale(1.1);}
-    100% {transform: translate(120px, 180px) rotate(180deg) scale(0.9);}
+  0% {
+    transform: translate(0, 0) rotate(0) scale(1);
+  }
+  50% {
+    transform: translate(-180px, -120px) rotate(90deg) scale(1.1);
+  }
+  100% {
+    transform: translate(120px, 180px) rotate(180deg) scale(0.9);
+  }
 }
 
 @keyframes anim_g {
-    0% {transform: translate(0, 0) rotate(0) scale(1);}
-    25% {transform: translate(90px, -150px) rotate(45deg) scale(0.9);}
-    75% {transform: translate(-150px, 90px) rotate(135deg) scale(1.1);}
-    100% {transform: translate(0, 0) rotate(180deg) scale(1);}
+  0% {
+    transform: translate(0, 0) rotate(0) scale(1);
+  }
+  25% {
+    transform: translate(90px, -150px) rotate(45deg) scale(0.9);
+  }
+  75% {
+    transform: translate(-150px, 90px) rotate(135deg) scale(1.1);
+  }
+  100% {
+    transform: translate(0, 0) rotate(180deg) scale(1);
+  }
 }
 
 @keyframes anim_h {
-    0% {transform: translate(0, 0) rotate(0) scale(1);}
-    33% {transform: translate(-100px, -100px) rotate(60deg) scale(1.2);}
-    66% {transform: translate(100px, 100px) rotate(120deg) scale(0.8);}
-    100% {transform: translate(0, 0) rotate(180deg) scale(1);}
+  0% {
+    transform: translate(0, 0) rotate(0) scale(1);
+  }
+  33% {
+    transform: translate(-100px, -100px) rotate(60deg) scale(1.2);
+  }
+  66% {
+    transform: translate(100px, 100px) rotate(120deg) scale(0.8);
+  }
+  100% {
+    transform: translate(0, 0) rotate(180deg) scale(1);
+  }
 }

@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 
 :root {
   --primary-color: 230, 131, 105;
   --dark-color: 30, 32, 30;
   --grey-color: 60, 61, 55;
   --white-color: 238, 238, 238;
+  --yellow-color: 255, 200, 0;
   --bck-dark-color: 236, 206, 174;
   --bck-light-color: 251, 246, 226;
 }
@@ -13,7 +15,7 @@ body {
   font-family: "Afacad Flux", sans-serif;
   font-weight: 400;
   color: rgb(var(--grey-color));
-  background: rgb(var(--bck-light-color));
+  /* background: rgb(var(--bck-light-color)); */
 }
 
 img {
@@ -147,9 +149,9 @@ a:hover {
 
 /* Header Color */
 .fixed-header .main-header {
-    background: rgba(var(--bck-dark-color), 0.9);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0.125rem 0.25rem rgba(var(--dark-color), 0.07);
+  background: rgba(var(--bck-dark-color), 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0.125rem 0.25rem rgba(var(--dark-color), 0.07);
 }
 
 /* Button Styling */
@@ -177,104 +179,221 @@ a:hover {
 }
 
 .bg-grey {
-    background: rgba(var(--bck-dark-color), 0.1);
+  background: rgba(var(--bck-dark-color), 0.25);
 }
 
 .bg-dark {
-    background: rgb(var(--dark-color)) !important;
+  background: rgb(var(--dark-color)) !important;
 }
 
 main {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 /* Section: Home */
 .home-section {
-    position: relative;
-    overflow: hidden;
-    padding-top: 150px;
-    padding-bottom: 100px;
+  position: relative;
+  overflow: hidden;
+  padding-top: 150px;
+  padding-bottom: 100px;
 }
 
 @media (max-width: 767px) {
-    .home-section {
-        padding-bottom: 70px;
-    }
+  .home-section {
+    padding-bottom: 70px;
+  }
 }
 
 .home-section .container {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 /* Home Intro: Greeting */
 .home-section .home-intro h6 {
-    font-weight: 600;
-    color: rgb(var(--dark-color));
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    font-size: 16px;
-    margin: 0 0 30px;
+  font-weight: 600;
+  color: rgb(var(--dark-color));
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 16px;
+  margin: 0 0 30px;
 }
 
 @media (max-width: 767px) {
-    .home-section .home-intro h6 {
-        margin: 0 0 20px;
-    }
+  .home-section .home-intro h6 {
+    margin: 0 0 20px;
+  }
 }
 
 /* Home Intro: Title */
 .home-section .home-intro h1 {
-    font-size: 70px;
-    font-weight: 600;
-    color: rgb(var(--dark-color));
-    margin: 0 0 35px;
-    line-height: 1;
+  /* font-size: 70px; */
+  font-size: 60px;
+  font-weight: 600;
+  color: rgb(var(--dark-color));
+  margin: 0 0 35px;
+  line-height: 1;
+  /* Fix typed text from dropping to the second line */
+  white-space: nowrap;
 }
 
 @media (max-width: 1200px) {
-    .home-section .home-intro h1 {
-        font-size: 60px;
-    }
+  .home-section .home-intro h1 {
+    /* font-size: 60px; */
+    font-size: 50px;
+  }
 }
 
 @media (max-width: 767px) {
-    .home-section .home-intro h1 {
-        margin: 0 0 25px;
-        font-size: 45px;
-    }
+  .home-section .home-intro h1 {
+    margin: 0 0 25px;
+    /* font-size: 45px; */
+    font-size: 40px;
+  }
 }
 
-.home-section .home-intro h1 span {
-    border-bottom: 2px solid rgb(var(--primary-color));
+/* Styling for typed text and underline */
+.home-section .home-intro h1 #type-it {
+  position: relative;
+  display: inline-block;
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.home-section .home-intro h1 #type-it::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2em; /* Adjust this value to increase/decrease space */
+  width: 100%;
+  /* height: 2px; */
+  height: 3px;
+  background-color: rgb(var(--yellow-color));
+}
+
+/* Styling for Typed.js cursor */
+.typed-cursor {
+  /* Adjust cursor position */
+  position: relative;
+  bottom: -6px;
+
+  /* Adjust color and size */
+  font-size: 80px;
+  line-height: 1;
+  color: rgb(var(--primary-color));
+  opacity: 1;
+  animation: blink 0.7s infinite;
+
+  /* Control cursor thickness */
+  display: inline-block;
+  width: 2px; /* Adjust this value to control thickness */
+  margin-left: 2px; /* Adds a small gap between the text and cursor */
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Adjust cursor size and thickness for different screen sizes */
+@media (max-width: 1200px) {
+  .typed-cursor {
+    font-size: 70px;
+    width: 2px; /* You can adjust this if needed */
+  }
+}
+
+@media (max-width: 767px) {
+  .typed-cursor {
+    font-size: 60px;
+    width: 1px; /* Thinner on mobile if desired */
+  }
 }
 
 /* Home Intro: Paragraph */
 .home-section .home-intro p {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 @media (max-width: 767px) {
-    .home-section .home-intro p {
-        font-size: 18px;
-    }
+  .home-section .home-intro p {
+    font-size: 18px;
+  }
 }
 
 /* Personal Photo */
 .home-image img {
-    height: 450px;
-    width: 450px;
-    object-fit: cover;
-    transition: ease all 0.3s;
-    box-shadow: 6px 6px 0 -1px rgb(var(--dark-color));
-    position: relative;
-    z-index: -2;
+  height: 450px;
+  width: 450px;
+  object-fit: cover;
+  transition: ease all 0.3s;
+  border: 3px solid rgb(var(--dark-color));
+  box-shadow: 6px 6px 0 -1px rgb(var(--dark-color));
+  position: relative;
+  z-index: -2;
+}
+
+@media (max-width: 1200px) {
+  .home-image img {
+    height: 400px;
+    width: 400px;
+  }
 }
 
 @media (max-width: 767px) {
-    .home-image img {
-        height: 300px;
-        width: 300px;
-    }
+  .home-image img {
+    height: 350px;
+    width: 350px;
+  }
+}
+
+/* Sections */
+.section {
+  padding: 100px 0;
+  position: relative;
+}
+
+@media (max-width: 991px) {
+  .section {
+    padding: 80px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 60px 0;
+  }
+}
+
+.about-text p {
+  font-size: 18px;
+}
+
+.stats-container {
+  margin-top: 1rem; /* Adjust as needed */
+}
+
+.stats-item {
+  margin-bottom: 1.5rem;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .stats-container {
+    display: flex;
+    gap: 6rem; /* Adjust horizontal spacing between items */
+  }
+
+  .stats-item {
+    margin-bottom: 0; /* Remove bottom margin on larger screens */
+  }
 }
