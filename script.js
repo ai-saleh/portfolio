@@ -240,53 +240,24 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", initSwiper);
 });
 
-// swiper-slider.js
-let projectSliders = [];
-const mobileBreakpoint = 768;
-
-function initProjectSliders() {
-  projectSliders.forEach(slider => slider.destroy(true, true));
-  projectSliders = [];
-
-  document.querySelectorAll('.project-slider').forEach((sliderElement, index) => {
-    const slides = sliderElement.querySelectorAll('.swiper-slide');
-    const swiperOptions = {
+// Project Swiper styles
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize Swiper for each project
+  const projectSwipers = document.querySelectorAll('.project-swiper');
+  
+  projectSwipers.forEach((swiperElement, index) => {
+    new Swiper(swiperElement, {
       slidesPerView: 1,
-      centeredSlides: true,
-      spaceBetween: 0,
-      loop: slides.length > 1,
-      autoplay: slides.length > 1 ? {
+      spaceBetween: 3, // Adjust this value to control the thickness of the space between slides
+      loop: true,
+      pagination: {
+        el: swiperElement.querySelector('.swiper-pagination'),
+        clickable: true,
+      },
+      autoplay: {
         delay: 5000,
         disableOnInteraction: false,
-      } : false,
-      pagination: {
-        el: sliderElement.querySelector('.swiper-pagination'),
-        clickable: true,
-        dynamicBullets: false,
-        renderBullet: function (index, className) {
-          return '<span class="' + className + '"></span>';
-        },
       },
-      effect: 'slide',
-      speed: 300,
-      watchSlidesProgress: true,
-      on: {
-        touchStart: function () {
-          this.autoplay.stop();
-        },
-        touchEnd: function () {
-          this.autoplay.start();
-        },
-        slideChange: function () {
-          this.pagination.render();
-          this.pagination.update();
-        },
-      },
-    };
-
-    projectSliders.push(new Swiper(sliderElement, swiperOptions));
+    });
   });
-}
-
-document.addEventListener('DOMContentLoaded', initProjectSliders);
-window.addEventListener("resize", initProjectSliders);
+});

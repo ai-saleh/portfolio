@@ -461,66 +461,6 @@ main {
   }
 }
 
-/* Section: Projects */
-.portfolio-box .portfolio-img {
-  position: relative;
-  transition: ease all 0.3s;
-  border: 3px solid rgb(var(--dark-color));
-}
-
-.portfolio-box .portfolio-img:hover {
-  box-shadow: 6px 6px 0 -1px rgb(var(--dark-color));
-}
-
-.portfolio-box .portfolio-text span {
-  display: inline-block;
-  padding: 8px 20px;
-  background: rgb(var(--bck-dark-color));
-  color: var(--dark-color);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 12px;
-  margin-bottom: 18px;
-}
-
-.portfolio-box .portfolio-text h4 {
-  color: rgb(var(--dark-color));
-  font-weight: 600;
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-
-/* Center specific elements in the portfolio section on mobile */
-@media (max-width: 767px) {
-  .portfolio-box .portfolio-text {
-    text-align: left; /* Keep default alignment for the container */
-  }
-
-  .portfolio-box .portfolio-text span,
-  .portfolio-box .portfolio-text h4 {
-    text-align: center;
-  }
-
-  .portfolio-box .portfolio-text h4 {
-    font-size: 26px;
-    margin-bottom: 10px;
-  }
-
-  .portfolio-box .portfolio-text .colored-btn {
-    display: block;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* Center the project type span */
-  .portfolio-box .portfolio-text > span:first-of-type {
-    display: block;
-    text-align: center;
-  }
-}
-
 /* Background Colors */
 .bg-dark-grey {
   background: rgb(var(--dark-color));

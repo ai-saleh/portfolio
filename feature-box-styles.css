@@ -1,21 +1,26 @@
 /* Feature box styling */
 :root {
   --icon-size: 70px;
+  --border-width: 3px;
+  --box-shadow-offset: 6px;
 }
 
+/* General feature box styles */
 .feature-box {
   display: flex;
   align-items: flex-start;
   padding: 40px;
   height: 192px; /* Set a fixed height - adjust as needed */
-  border: 3px solid rgb(var(--dark-color));
+  border: var(--border-width) solid rgb(var(--dark-color));
   transition: all 0.3s ease;
 }
 
+/* Hover effect for feature boxes */
 .feature-box:hover {
-  box-shadow: 6px 6px 0 -1px rgb(var(--dark-color));
+  box-shadow: var(--box-shadow-offset) var(--box-shadow-offset) 0 -1px rgb(var(--dark-color));
 }
 
+/* Icon styling within feature boxes */
 .feature-box .icon {
   display: flex;
   align-items: center;
@@ -28,9 +33,10 @@
   line-height: 1;
   color: rgb(var(--dark-color));
   background: rgb(var(--white-color));
-  border: 3px solid rgb(var(--dark-color));
+  border: var(--border-width) solid rgb(var(--dark-color));
 }
 
+/* Content area styling */
 .feature-box .content {
   flex-grow: 1; /* Allow content to fill remaining space */
   display: flex;
@@ -39,6 +45,7 @@
   overflow: hidden; /* In case of content overflow */
 }
 
+/* Heading styles within feature boxes */
 .feature-box h5 {
   margin-bottom: 10px;
   font-size: 24px;
@@ -46,30 +53,34 @@
   color: rgb(var(--dark-color));
 }
 
+/* Paragraph styles within feature boxes */
 .feature-box p {
   margin: 0;
   font-size: 16px;
   color: rgb(var(--dark-color));
 }
 
-/* Styles for desktop/mobile views */
+/* Styles for desktop/mobile views and Swiper */
+/* Desktop view layout */
 .ftb-desktop-view {
   display: flex;
   flex-wrap: wrap;
 }
 
+/* Hide mobile view by default */
 .ftb-mobile-view {
   display: none;
 }
 
-/* Media Queries */
+/* Media Queries for responsive design */
 @media (max-width: 991px) {
   .feature-box {
-    padding: 30px;
+    padding: 30px; /* Reduce padding for smaller screens */
   }
 }
 
 @media (max-width: 767px) {
+  /* Switch views for mobile devices */
   .ftb-desktop-view {
     display: none;
   }
@@ -78,44 +89,43 @@
     display: block;
   }
 
+  /* Adjust feature box for mobile */
   .feature-box {
     padding: 20px;
     height: 160px; /* Smaller height for mobile - adjust as needed */
   }
 
   .feature-box h5 {
-    font-size: 21px;
+    font-size: 21px; /* Smaller font size for mobile */
   }
 }
 
-/* Skill boxes styling */
+/* Skill boxes styling - a variation of feature boxes */
 .feature-box.skill {
   /* Adjust size */
   padding: 15px;
   height: auto;
 
-  /* Adjust text */
+  /* Adjust text alignment */
   align-items: center;
 }
 
 .feature-box.skill .icon {
-  /* Modify icon size or appearance */
-  width: 20px;
+  /* Modify icon size or appearance for skill boxes */
   width: calc(var(--icon-size) - 20px);
   height: calc(var(--icon-size) - 20px);
   min-width: calc(var(--icon-size) - 20px); /* Prevent icon from shrinking */
-  /* font-size: 2em; */
-  /* margin-bottom: 10px; */
 }
 
 .feature-box.skill h5 {
-  /* Adjust title style */
+  /* Adjust title style for skill boxes */
   margin: 0;
 }
 
+/* Further adjustments for skill boxes on smaller screens */
 @media (max-width: 1200px) {
   .feature-box.skill h5 {
-    font-size: 1em;
+    font-size: 1em; /* Smaller font size for skill box titles on medium screens */
   }
 }
 
@@ -124,28 +134,12 @@
   width: 90%;
 }
 
-/* Colors for each box */
-.ftb-bg-1 {
-  background-color: blanchedalmond;
-}
-.ftb-bg-2 {
-  background-color: bisque;
-}
-.ftb-bg-3 {
-  background-color: mistyrose;
-}
-.ftb-bg-4 {
-  background-color: navajowhite;
-}
-.ftb-bg-5 {
-  background-color: moccasin;
-}
-.ftb-bg-6 {
-  background-color: oldlace;
-}
-.ftb-bg-7 {
-  background-color: peachpuff;
-}
-.ftb-bg-8 {
-  background-color: papayawhip;
-}
+/* Colors for each box - provides visual variety */
+.ftb-bg-1 { background-color: blanchedalmond; }
+.ftb-bg-2 { background-color: bisque; }
+.ftb-bg-3 { background-color: mistyrose; }
+.ftb-bg-4 { background-color: navajowhite; }
+.ftb-bg-5 { background-color: moccasin; }
+.ftb-bg-6 { background-color: oldlace; }
+.ftb-bg-7 { background-color: peachpuff; }
+.ftb-bg-8 { background-color: papayawhip; }

@@ -1,44 +1,75 @@
-/* Swiper-specific styles */
-
-/* Swiper pagination styles */
-.swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background: rgb(var(--dark-color));
-  opacity: 0.5;
-  transition: opacity 0.3s ease; /* Add smooth transition for opacity change */
+:root {
+  --swiper-pagination-bullet-size: 10px;
+  --swiper-pagination-bottom: 10px;
 }
 
-.swiper-pagination-bullet-active {
+/* General Swiper styles */
+.swiper {
+  position: relative;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: var(--swiper-pagination-bottom);
+  left: 0;
+  right: 0;
+}
+
+.swiper-pagination-bullet {
+  width: var(--swiper-pagination-bullet-size);
+  height: var(--swiper-pagination-bullet-size);
+  background: rgba(var(--dark-color), 0.5);
   opacity: 1;
 }
 
-/* Remove navigation arrow styles */
-.swiper-button-next,
-.swiper-button-prev {
-  display: none;
+.swiper-pagination-bullet-active {
+  background: rgb(var(--dark-color));
 }
 
-/* Smooth transition styles */
-.swiper-wrapper {
-  transition-timing-function: ease-out;
+/* Project Swiper styles */
+.project-swiper {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(var(--dark-color));
 }
 
-.swiper-slide-active,
-.swiper-slide-prev,
-.swiper-slide-next {
-  transition: transform 0.3s ease;
+.project-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
 }
 
-/* Styles for mobile Swiper */
+.project-swiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Feature box Swiper styles */
 @media (max-width: 767px) {
   .ftb-mobile-view .swiper-slide {
-    width: 80%; /* Adjust this value to control how much of the next slide is visible */
+    width: 80%;
+    opacity: 0.5;
     transition: opacity 0.3s ease;
-    opacity: 0.5; /* Make non-active slides semi-transparent */
   }
 
   .ftb-mobile-view .swiper-slide-active {
-    opacity: 1; /* Make the active slide fully opaque */
+    opacity: 1;
   }
+}
+
+/* Custom positioning classes */
+.swiper-pagination-top {
+  top: 20px;
+  bottom: auto;
+}
+
+.swiper-pagination-middle {
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
 }
