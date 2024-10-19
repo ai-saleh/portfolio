@@ -1,14 +1,25 @@
-/* Section: Projects */
+/* Projects section styling */
+:root {
+  --border-width: 3px;
+  --box-shadow-offset: 6px;
+  --project-type-font-size: 12px;
+  --project-title-font-size: 32px;
+  --project-title-font-size-mobile: 26px;
+}
+
+/* Portfolio image container styling */
 .portfolio-box .portfolio-img {
   position: relative;
   transition: ease all 0.3s;
-  border: 3px solid rgb(var(--dark-color));
+  border: var(--border-width) solid rgb(var(--dark-color));
 }
 
+/* Hover effect for portfolio images */
 .portfolio-box .portfolio-img:hover {
-  box-shadow: 6px 6px 0 -1px rgb(var(--dark-color));
+  box-shadow: var(--box-shadow-offset) var(--box-shadow-offset) 0 -1px rgb(var(--dark-color));
 }
 
+/* Project type label styling */
 .portfolio-box .portfolio-text span {
   display: inline-block;
   padding: 8px 20px;
@@ -17,33 +28,38 @@
   letter-spacing: 3px;
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 12px;
+  font-size: var(--project-type-font-size);
   margin-bottom: 18px;
 }
 
+/* Project title styling */
 .portfolio-box .portfolio-text h4 {
   color: rgb(var(--dark-color));
   font-weight: 600;
-  font-size: 32px;
+  font-size: var(--project-title-font-size);
   margin-bottom: 20px;
 }
 
-/* Center specific elements in the portfolio section on mobile */
+/* Mobile-specific styles for portfolio section */
 @media (max-width: 767px) {
+  /* Maintain left alignment for the overall text container */
   .portfolio-box .portfolio-text {
-    text-align: left; /* Keep default alignment for the container */
+    text-align: left;
   }
 
+  /* Center-align project type and title */
   .portfolio-box .portfolio-text span,
   .portfolio-box .portfolio-text h4 {
     text-align: center;
   }
 
+  /* Adjust project title size for mobile */
   .portfolio-box .portfolio-text h4 {
-    font-size: 26px;
+    font-size: var(--project-title-font-size-mobile);
     margin-bottom: 10px;
   }
 
+  /* Center-align the action button */
   .portfolio-box .portfolio-text .colored-btn {
     display: block;
     width: fit-content;
@@ -51,7 +67,7 @@
     margin-right: auto;
   }
 
-  /* Center the project type span */
+  /* Ensure the project type span is full-width and centered */
   .portfolio-box .portfolio-text > span:first-of-type {
     display: block;
     text-align: center;
