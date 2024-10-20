@@ -28,10 +28,14 @@
   --letter-spacing-md: 3px;
   --letter-spacing-sm: 2px;
 
+  /* Margins */
+  --box-margin-sm: 12px;
+
   /* Box padding */
   --box-padding-lg: 40px;
   --box-padding-md: 30px;
   --box-padding-sm: 20px;
+  --box-padding-xs: 10px;
 
   /* Form padding */
   --form-padding-md: 0.5rem;
@@ -264,7 +268,7 @@ main {
   white-space: nowrap;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .home-section .home-intro h1 {
     font-size: 50px;
   }
@@ -321,7 +325,7 @@ main {
 }
 
 /* Adjust cursor size and thickness for different screen sizes */
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .typed-cursor {
     font-size: 70px;
     width: 2px; /* You can adjust this if needed */
@@ -358,7 +362,7 @@ main {
   z-index: -2;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .home-image img {
     height: 400px;
     width: 400px;

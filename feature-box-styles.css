@@ -118,7 +118,7 @@
 }
 
 /* Further adjustments for skill boxes on smaller screens */
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .feature-box.skill h5 {
     font-size: 1em; /* Smaller font size for skill box titles on medium screens */
   }

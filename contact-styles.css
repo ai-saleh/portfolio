@@ -1,10 +1,18 @@
-/* Contact form styling */
-.contact-form {
-  border: var(--border-width) solid rgb(var(--dark-color));
-  padding: var(--box-padding-lg);
-  background: rgb(var(--white-color));
+/* Contact section and footer styling */
+
+/* Contact section background */
+#contact {
+    background: rgb(var(--dark-color));
 }
 
+/* Contact form styling */
+.contact-form {
+    border: var(--border-width) solid rgb(var(--dark-color));
+    padding: var(--box-padding-lg);
+    background: rgb(var(--white-color));
+}
+
+/* Adjust padding for smaller screens */
 @media (max-width: 767px) {
     .contact-form {
         padding: var(--box-padding-md);
@@ -19,7 +27,7 @@
 
 .contact-form .form-control {
     border-radius: 0;
-    border: var(--tiny-border-width) solid rgb(var(--dark-color));
+    border: var(--tiny-border-width) solid rgba(var(--dark-color), 0.5);
     box-shadow: none;
     padding: var(--form-padding-md) var(--form-padding-sm);
 }
@@ -28,11 +36,10 @@
 .contact-form .colored-btn {
     display: block;
     width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-  }
+    margin: 0 auto;
+}
 
-/* Contact information */
+/* Contact information styling */
 .contact-info {
     margin: 0;
     padding: 0;
@@ -63,7 +70,7 @@
 .contact-info h5 {
     font-size: var(--font-size-xs);
     margin: 0 0 5px;
-    color: rgb(var(--white-color));
+    color: rgba(var(--white-color), 0.75);
     font-weight: 400;
     letter-spacing: var(--letter-spacing-sm);
     text-transform: uppercase;
@@ -76,7 +83,55 @@
     font-weight: 500;
 }
 
-/* Fix links color on dark background when hovering */
+/* Improve link visibility on dark background when hovering */
 .link-dark-bg:hover {
     color: rgb(var(--white-color));
+}
+
+/* Textarea responsive sizing */
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Default size for desktop */
+textarea {
+    height: 300px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1199px) {
+    textarea {
+        height: 150px;
+    }
+}
+
+@media (max-width: 991px) {
+    textarea {
+        height: 200px;
+    }
+}
+
+@media (max-width: 767px) {
+    textarea {
+        height: 150px;
+    }
+}
+
+/* Footer styling */
+.footer {
+    background-color: rgb(var(--dark-color));
+    padding-top: var(--box-padding-xs);
+    padding-bottom: var(--box-padding-xs);
+    /* Kept commented out as requested */
+    /* border-top: var(--tiny-border-width) solid rgba(var(--white-color), 0.5); */
+    color: rgba(var(--white-color), 0.75);
+}
+
+.footer .nav a {
+    font-size: var(--font-size-md);
+}
+
+.footer .nav a + a {
+    margin-left: var(--box-margin-sm);
 }
