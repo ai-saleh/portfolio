@@ -1,0 +1,82 @@
+/* Contact form styling */
+.contact-form {
+  border: var(--border-width) solid rgb(var(--dark-color));
+  padding: var(--box-padding-lg);
+  background: rgb(var(--white-color));
+}
+
+@media (max-width: 767px) {
+    .contact-form {
+        padding: var(--box-padding-md);
+    }
+}
+
+.contact-form .lead {
+    font-weight: 400;
+    font-size: var(--font-size-sm);
+    margin: 0 0 30px;
+}
+
+.contact-form .form-control {
+    border-radius: 0;
+    border: var(--tiny-border-width) solid rgb(var(--dark-color));
+    box-shadow: none;
+    padding: var(--form-padding-md) var(--form-padding-sm);
+}
+
+/* Center form button */
+.contact-form .colored-btn {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+/* Contact information */
+.contact-info {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.contact-info li {
+    display: flex;
+    position: relative;
+    padding-bottom: var(--box-padding-lg);
+}
+
+.contact-info li:last-child {
+    padding-bottom: 0;
+}
+
+.contact-info .icon {
+    height: var(--tiny-icon-size);
+    width: var(--tiny-icon-size);
+    min-width: var(--tiny-icon-size);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(var(--dark-color));
+    font-size: var(--font-size-md);
+}
+
+.contact-info h5 {
+    font-size: var(--font-size-xs);
+    margin: 0 0 5px;
+    color: rgb(var(--white-color));
+    font-weight: 400;
+    letter-spacing: var(--letter-spacing-sm);
+    text-transform: uppercase;
+}
+
+.contact-info p {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    color: rgb(var(--white-color));
+    font-weight: 500;
+}
+
+/* Fix links color on dark background when hovering */
+.link-dark-bg:hover {
+    color: rgb(var(--white-color));
+}

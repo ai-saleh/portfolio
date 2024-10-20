@@ -18,7 +18,28 @@
   --section-padding: 100px;
   --section-padding-mobile: 60px;
   --border-width: 3px;
+  --tiny-border-width: 1px;
   --box-shadow-offset: 6px;
+
+  /* Font sizes */
+  --font-size-md: 24px;
+  --font-size-sm: 18px;
+  --font-size-xs: 14px;
+  --letter-spacing-md: 3px;
+  --letter-spacing-sm: 2px;
+
+  /* Box padding */
+  --box-padding-lg: 40px;
+  --box-padding-md: 30px;
+  --box-padding-sm: 20px;
+
+  /* Form padding */
+  --form-padding-md: 0.5rem;
+  --form-padding-sm: 0.75rem;
+
+  /* Icon sizes */
+  --icon-size: 70px;
+  --tiny-icon-size: 50px
 }
 
 /* Base styles */
