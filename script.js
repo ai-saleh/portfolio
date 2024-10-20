@@ -2,32 +2,37 @@
 $(document).ready(function () {
   // Function to check if we're in mobile view
   function isMobileView() {
-    return $(".navbar-toggler").is(":visible");
+      return $(".navbar-toggler").is(":visible");
   }
 
   // Function to check if navbar is open
   function isNavbarOpen() {
-    return $(".navbar-collapse").hasClass("show");
+      return $(".navbar-collapse").hasClass("show");
   }
 
   // Function to update the header class
   function updateHeaderClass() {
-    var scrollTop = $(window).scrollTop();
+      var scrollTop = $(window).scrollTop();
 
-    if (scrollTop >= 80 || isNavbarOpen()) {
-      $("body").addClass("fixed-header");
-    } else {
-      $("body").removeClass("fixed-header");
-    }
+      if (scrollTop >= 80 || isNavbarOpen()) {
+          $("body").addClass("fixed-header");
+      } else {
+          $("body").removeClass("fixed-header");
+      }
+  }
+
+  // Function to collapse navbar with animation
+  function collapseNavbar() {
+      if (isNavbarOpen()) {
+          $(".navbar-toggler").click(); // This triggers Bootstrap's collapse animation
+      }
   }
 
   // Function to collapse navbar in desktop view
   function collapseNavbarInDesktop() {
-    if (!isMobileView()) {
-      $(".navbar-collapse").removeClass("show");
-      $(".navbar-toggler").addClass("collapsed").attr("aria-expanded", "false");
-    }
-    updateHeaderClass();
+      if (!isMobileView()) {
+          collapseNavbar();
+      }
   }
 
   // Window Scroll
@@ -35,30 +40,61 @@ $(document).ready(function () {
 
   // Navbar toggler click event
   $(".navbar-toggler").on("click", function () {
-    // Toggle a custom class immediately
-    $("body").toggleClass("navbar-toggled");
+      // Toggle a custom class immediately
+      $("body").toggleClass("navbar-toggled");
 
-    // Use MutationObserver to detect when Bootstrap toggles the 'show' class
-    var observer = new MutationObserver(function (mutations) {
-      mutations.forEach(function (mutation) {
-        if (
-          mutation.type === "attributes" &&
-          mutation.attributeName === "class"
-        ) {
-          updateHeaderClass();
-          observer.disconnect();
-        }
-      });
-    });
-
-    observer.observe($(".navbar-collapse")[0], { attributes: true });
-
-    // Fallback in case MutationObserver doesn't trigger
-    setTimeout(updateHeaderClass, 350);
+      // Immediately update the header class when opening
+      if (!isNavbarOpen()) {
+          $("body").addClass("fixed-header");
+      }
+      // When closing, the header class will be updated after animation completes
   });
 
   // Window resize event
   $(window).on("resize", collapseNavbarInDesktop);
+
+  // Close navbar when clicking on a nav item
+  $(".navbar-nav .nav-link").on("click", function (e) {
+      // Don't prevent default - allow immediate navigation
+      
+      // Set a timeout to collapse the navbar after navigation
+      setTimeout(function() {
+          collapseNavbar();
+      }, 100); // Adjust this delay if needed
+  });
+
+  // Close navbar when clicking outside
+  $(document).on("click", function (event) {
+      var $navbar = $(".navbar-collapse");
+      if (
+          !$(event.target).closest(".navbar-collapse").length &&
+          !$(event.target).is(".navbar-toggler") &&
+          $navbar.hasClass("show")
+      ) {
+          collapseNavbar();
+      }
+  });
+
+  // Handle navbar collapse animation start
+  $('.navbar-collapse').on('hide.bs.collapse', function () {
+      // Do nothing here, just listen for the event
+  });
+
+  // Handle navbar collapse animation end
+  $('.navbar-collapse').on('hidden.bs.collapse', function () {
+      $("body").removeClass("navbar-toggled");
+      updateHeaderClass();
+  });
+
+  // Handle navbar expand animation start
+  $('.navbar-collapse').on('show.bs.collapse', function () {
+      $("body").addClass("fixed-header");
+  });
+
+  // Handle navbar expand animation end
+  $('.navbar-collapse').on('shown.bs.collapse', function () {
+      updateHeaderClass();
+  });
 
   // Initial calls
   collapseNavbarInDesktop();
@@ -259,5 +295,18 @@ document.addEventListener('DOMContentLoaded', function() {
         disableOnInteraction: false,
       },
     });
+  });
+});
+
+// Simple ScrollIt Setup
+$(document).ready(function() {
+  $.scrollIt({
+      upKey: 38,             // key code to navigate to the next section
+      downKey: 40,           // key code to navigate to the previous section
+      easing: 'linear',      // the easing function for animation
+      scrollTime: 100,       // how long (in ms) the animation takes
+      activeClass: 'active', // class given to the active nav element
+      onPageChange: null,    // function(pageIndex) that is called when page is changed
+      topOffset: 0           // offset (in px) for fixed top navigation
   });
 });

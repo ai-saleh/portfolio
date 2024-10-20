@@ -120,11 +120,11 @@ a:hover {
   transition: ease all 0.3s;
 }
 
-.main-header .navbar-nav > li > .nav-link:hover {
+.main-header .navbar-nav > li > .nav-link:hover, .main-header .navbar-nav > li > .nav-link.active {
   color: rgb(var(--primary-color));
 }
 
-.main-header .navbar-nav > li > .nav-link:hover:after {
+.main-header .navbar-nav > li > .nav-link:hover:after, .main-header .navbar-nav > li > .nav-link.active:after {
   left: 0;
   right: auto;
   width: 100%;
