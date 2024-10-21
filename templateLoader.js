@@ -1,7 +1,7 @@
 // Template HTML code
 
 // Navbar
-class jsNavbar extends HTMLElement {
+class tmpNavbar extends HTMLElement {
   connectedCallback() {
     this.innerHTML = /*html*/ `
     <header class="main-header">
@@ -35,7 +35,7 @@ class jsNavbar extends HTMLElement {
   
           <!-- Download CV -->
           <div class="ms-auto d-none d-lg-block">
-            <a class="colored-btn" href="#resume">Download CV</a>
+            <a class="colored-btn" href="https://1drv.ms/b/s!AlnurQdtf7Qwg4JT5eGAMArcWeFqew?e=lQaR9r">Download CV</a>
           </div>
   
           <!-- Menu Toggle -->
@@ -53,7 +53,7 @@ class jsNavbar extends HTMLElement {
 }
 
 // Contact form
-class jsContactForm extends HTMLElement {
+class tmpContactForm extends HTMLElement {
   connectedCallback() {
     this.innerHTML = /*html*/ `
     <section id="contact" class="section">
@@ -134,7 +134,7 @@ class jsContactForm extends HTMLElement {
 }
 
 // Footer
-class jsFooter extends HTMLElement {
+class tmpFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = /*html*/ `
     <footer class="footer">
@@ -158,6 +158,6 @@ class jsFooter extends HTMLElement {
   }
 }
 
-customElements.define("js-navbar", jsNavbar);
-customElements.define("js-contact", jsContactForm);
-customElements.define("js-footer", jsFooter);
+customElements.define("tmp-navbar", tmpNavbar);
+customElements.define("tmp-contact", tmpContactForm);
+customElements.define("tmp-footer", tmpFooter);

@@ -60,7 +60,7 @@ $(document).ready(function () {
       // Set a timeout to collapse the navbar after navigation
       setTimeout(function() {
           collapseNavbar();
-      }, 100); // Adjust this delay if needed
+      }, 300); // Adjust this delay if needed
   });
 
   // Close navbar when clicking outside
