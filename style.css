@@ -15,35 +15,53 @@
 
   /* Layout and sizing */
   --header-height: 65px;
-  --section-padding: 100px;
-  --section-padding-mobile: 60px;
-  --border-width: 3px;
-  --tiny-border-width: 1px;
+  
+  /* Effects */
   --box-shadow-offset: 6px;
 
   /* Font sizes */
   --font-size-md: 24px;
   --font-size-sm: 18px;
   --font-size-xs: 14px;
+
+  /* Letter spacing */
   --letter-spacing-md: 3px;
   --letter-spacing-sm: 2px;
 
   /* Margins */
   --box-margin-sm: 12px;
 
+  /* Section padding */
+  --section-padding-xl: 100px;
+  --section-padding-lg: 90px;
+  --section-padding-md: 80px;
+  --section-padding-sm: 70px;
+  --section-padding-xs: 60px;
+
   /* Box padding */
+  --box-padding-xl: 50px;
   --box-padding-lg: 40px;
   --box-padding-md: 30px;
   --box-padding-sm: 20px;
   --box-padding-xs: 10px;
 
   /* Form padding */
-  --form-padding-md: 0.5rem;
-  --form-padding-sm: 0.75rem;
+  --form-padding-xl: 24px;
+  --form-padding-lg: 18px;
+  --form-padding-md: 16px;
+  --form-padding-sm: 14px;
+  --form-padding-xs: 12px;
+
+  /* Borders */
+  --border-width: 3px;
+  --tiny-border-width: 1px;
 
   /* Icon sizes */
   --icon-size: 70px;
-  --tiny-icon-size: 50px
+  --tiny-icon-size: 50px;
+
+  /* Transition */
+  --trn-ease-all: all 0.3s ease;
 }
 
 /* Base styles */
@@ -195,15 +213,17 @@ a:hover {
 
 /* Button Styling */
 .colored-btn {
-  padding: 8px 20px;
-  border: 2px solid rgb(var(--primary-color));
-  font-size: 14px;
+  /* padding: 8px 20px;
+  border: 2px solid rgb(var(--primary-color)); */
+  padding: var(--form-padding-xs) var(--form-padding-xl);
+  border: var(--tiny-border-width) solid rgba(var(--dark-color), 0.5);
+  font-size: var(--font-size-xs);
   line-height: 1.5;
   text-decoration: none;
   font-weight: 500;
-  letter-spacing: 2px;
+  letter-spacing: var(--letter-spacing-sm);
   text-transform: uppercase;
-  transition: ease all 0.3s;
+  transition: var(--trn-ease-all);
   display: inline-block;
   background: rgb(var(--primary-color));
   color: rgb(var(--white-color));
@@ -227,12 +247,12 @@ main {
   position: relative;
   overflow: hidden;
   padding-top: 150px;
-  padding-bottom: var(--section-padding);
+  padding-bottom: var(--section-padding-xl);
 }
 
 @media (max-width: 767px) {
   .home-section {
-    padding-bottom: var(--section-padding-mobile);
+    padding-bottom: var(--section-padding-xs);
   }
 }
 
@@ -378,7 +398,7 @@ main {
 
 /* Sections */
 .section {
-  padding: var(--section-padding) 0;
+  padding: var(--section-padding-xl) 0;
   position: relative;
 }
 
@@ -390,7 +410,7 @@ main {
 
 @media (max-width: 767px) {
   .section {
-    padding: var(--section-padding-mobile) 0;
+    padding: var(--section-padding-xs) 0;
   }
 }
 
@@ -423,7 +443,7 @@ main {
 }
 
 .section-heading {
-  padding-bottom: 60px;
+  padding-bottom: var(--section-padding-xs);
   text-align: center;
   opacity: 1;
   color: rgb(var(--dark-color)); /* Ensure text color contrasts with the background */
@@ -431,13 +451,13 @@ main {
 
 @media (max-width: 991px) {
   .section-heading {
-    padding-bottom: 40px;
+    padding-bottom: var(--box-padding-lg);
   }
 }
 
 @media (max-width: 767px) {
   .section-heading {
-    padding-bottom: 30px;
+    padding-bottom: var(--box-padding-md);
   }
 }
 

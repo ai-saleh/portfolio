@@ -16,19 +16,19 @@ class jsNavbar extends HTMLElement {
           <div class="collapse navbar-collapse justify-content-end" id="navbar-collapse-toggle">
             <ul class="navbar-nav mx-auto">
               <li>
-                <a href="#home" class="nav-link" data-scroll-nav="0">Home</a>
+                <a href="./home.html#home" class="nav-link" data-scroll-nav="0">Home</a>
               </li>
               <li>
-                <a href="#about" class="nav-link" data-scroll-nav="1">About Me</a>
+                <a href="./home.html#about" class="nav-link" data-scroll-nav="1">About Me</a>
               </li>
               <li>
-                <a href="#services" class="nav-link" data-scroll-nav="2">Services</a>
+                <a href="./home.html#services" class="nav-link" data-scroll-nav="2">Services</a>
               </li>
               <li>
-                <a href="#skills" class="nav-link" data-scroll-nav="3">Skills</a>
+                <a href="./home.html#skills" class="nav-link" data-scroll-nav="3">Skills</a>
               </li>
               <li>
-                <a href="#projects" class="nav-link" data-scroll-nav="4">Projects</a>
+                <a href="./home.html#projects" class="nav-link" data-scroll-nav="4">Projects</a>
               </li>
             </ul>
           </div>

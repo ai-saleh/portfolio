@@ -298,8 +298,9 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Simple ScrollIt Setup
+// ScrollIt Setup
 $(document).ready(function() {
+  // Initialize ScrollIt
   $.scrollIt({
       upKey: 38,             // key code to navigate to the next section
       downKey: 40,           // key code to navigate to the previous section
@@ -308,5 +309,25 @@ $(document).ready(function() {
       activeClass: 'active', // class given to the active nav element
       onPageChange: null,    // function(pageIndex) that is called when page is changed
       topOffset: 0           // offset (in px) for fixed top navigation
+  });
+
+  // Custom handling for links
+  $('a[href^="#"]').on('click', function(event) {
+    // This is an in-page link, let ScrollIt handle it
+    return;
+  });
+
+  $('a:not([href^="#"])').on('click', function(event) {
+    // This is a link to another page, handle it normally
+    // But first, check if it's an external link
+    var href = $(this).attr('href');
+    var isExternal = href.indexOf('http') === 0; // Simple check for http:// or https://
+
+    if (!isExternal) {
+      // It's an internal link to another page
+      event.preventDefault(); // Prevent the default action
+      window.location.href = href; // Navigate to the new page
+    }
+    // If it's external, let the browser handle it normally
   });
 });
