@@ -93,7 +93,7 @@ class tmpContactForm extends HTMLElement {
               </div>
             </div>
             <div class="col-lg-5 ms-auto col-xl-5">
-              <div class="pb-5 d-none d-md-block">
+              <div class="pb-5 d-none d-lg-block">
                 <img src="assets/svg/asset_2.svg" class="w-100" alt="People talking to each other.">
               </div>
               <ul class="contact-info">

@@ -22,7 +22,7 @@
 .contact-form .lead {
     font-weight: 400;
     font-size: var(--font-size-sm);
-    margin: 0 0 30px;
+    margin: 0 0 var(--box-margin-lg);
 }
 
 .contact-form .form-control {
@@ -74,7 +74,7 @@
 
 .contact-info h5 {
     font-size: var(--font-size-xs);
-    margin: 0 0 5px;
+    margin: 0 0 var(--big-border-width);
     color: rgba(var(--white-color), 0.75);
     font-weight: 400;
     letter-spacing: var(--letter-spacing-sm);
@@ -101,25 +101,25 @@ textarea {
 
 /* Default size for desktop */
 textarea {
-    height: 300px;
+    height: var(--txt-area-xl);
 }
 
 /* Responsive adjustments */
 @media (max-width: 1199px) {
     textarea {
-        height: 150px;
+        height: var(--txt-area-sm);
     }
 }
 
 @media (max-width: 991px) {
     textarea {
-        height: 200px;
+        height: var(--txt-area-md);
     }
 }
 
 @media (max-width: 767px) {
     textarea {
-        height: 150px;
+        height: var(--txt-area-sm);
     }
 }
 

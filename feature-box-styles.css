@@ -4,10 +4,10 @@
 .feature-box {
   display: flex;
   align-items: flex-start;
-  padding: 40px;
-  height: 192px; /* Set a fixed height - adjust as needed */
+  padding: var(--box-padding-lg);
+  height: var(--box-height-lg); /* Set a fixed height - adjust as needed */
   border: var(--border-width) solid rgb(var(--dark-color));
-  transition: all 0.3s ease;
+  transition: var(--trn-ease-all);
 }
 
 /* Hover effect for feature boxes */
@@ -23,9 +23,9 @@
   width: var(--icon-size);
   height: var(--icon-size);
   min-width: var(--icon-size); /* Prevent icon from shrinking */
-  margin-right: 20px; /* Add space between icon and content */
-  font-size: 32px;
-  line-height: 1;
+  margin-right: var(--box-margin-md); /* Add space between icon and content */
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-xs);
   color: rgb(var(--dark-color));
   background: rgb(var(--white-color));
   border: var(--border-width) solid rgb(var(--dark-color));
@@ -42,8 +42,8 @@
 
 /* Heading styles within feature boxes */
 .feature-box h5 {
-  margin-bottom: 10px;
-  font-size: 24px;
+  margin-bottom: var(--box-margin-xs);
+  font-size: var(--font-size-md);
   font-weight: 600;
   color: rgb(var(--dark-color));
 }
@@ -51,8 +51,14 @@
 /* Paragraph styles within feature boxes */
 .feature-box p {
   margin: 0;
-  font-size: 16px;
+  font-size: var(--font-size-sm);
   color: rgb(var(--dark-color));
+}
+
+@media (max-width: 991px) {
+  .feature-box p {
+    font-size: var(--font-size-xs);
+  }
 }
 
 /* Styles for desktop/mobile views and Swiper */
@@ -70,7 +76,7 @@
 /* Media Queries for responsive design */
 @media (max-width: 991px) {
   .feature-box {
-    padding: 30px; /* Reduce padding for smaller screens */
+    padding: var(--box-padding-md); /* Reduce padding for smaller screens */
   }
 }
 
@@ -86,19 +92,31 @@
 
   /* Adjust feature box for mobile */
   .feature-box {
-    padding: 20px;
-    height: 160px; /* Smaller height for mobile - adjust as needed */
+    padding: var(--box-padding-sm);
+    height: var(--box-height-md); /* Smaller height for mobile - adjust as needed */
   }
 
   .feature-box h5 {
-    font-size: 21px; /* Smaller font size for mobile */
+    font-size: var(--font-size-sm); /* Smaller font size for mobile */
+  }
+}
+
+@media (max-width: 479px) {
+  .feature-box {
+    height: var(--box-height-lg); /* Smaller height for mobile - adjust as needed */
+  }
+}
+
+@media (max-width: 383px) {
+  .feature-box {
+    height: var(--box-height-xl); /* Smaller height for mobile - adjust as needed */
   }
 }
 
 /* Skill boxes styling - a variation of feature boxes */
 .feature-box.skill {
   /* Adjust size */
-  padding: 15px;
+  padding: var(--form-padding-md);
   height: auto;
 
   /* Adjust text alignment */
@@ -107,9 +125,9 @@
 
 .feature-box.skill .icon {
   /* Modify icon size or appearance for skill boxes */
-  width: calc(var(--icon-size) - 20px);
-  height: calc(var(--icon-size) - 20px);
-  min-width: calc(var(--icon-size) - 20px); /* Prevent icon from shrinking */
+  width: var(--tiny-icon-size);
+  height: var(--tiny-icon-size);
+  min-width: var(--tiny-icon-size); /* Prevent icon from shrinking */
 }
 
 .feature-box.skill h5 {
@@ -120,14 +138,9 @@
 /* Further adjustments for skill boxes on smaller screens */
 @media (max-width: 1199px) {
   .feature-box.skill h5 {
-    font-size: 1em; /* Smaller font size for skill box titles on medium screens */
+    font-size: var(--font-size-xs); /* Smaller font size for skill box titles on medium screens */
   }
 }
-
-/* Resize skills section image due to its large size */
-/* #skills-img {
-  width: 90%;
-} */
 
 /* Colors for each box - provides visual variety */
 .ftb-bg-1 { background-color: blanchedalmond; }

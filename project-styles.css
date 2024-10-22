@@ -1,16 +1,9 @@
 /* Projects section styling */
-:root {
-  --border-width: 3px;
-  --box-shadow-offset: 6px;
-  --project-type-font-size: 12px;
-  --project-title-font-size: 32px;
-  --project-title-font-size-mobile: 26px;
-}
 
 /* Portfolio image container styling */
 .portfolio-box .portfolio-img {
   position: relative;
-  transition: ease all 0.3s;
+  transition: var(--trn-ease-all);
   border: var(--border-width) solid rgb(var(--dark-color));
 }
 
@@ -22,22 +15,22 @@
 /* Project type label styling */
 .portfolio-box .portfolio-text span {
   display: inline-block;
-  padding: 8px 20px;
+  padding: var(--box-padding-xs) var(--box-padding-sm);
   background: rgb(var(--bck-dark-color));
   color: var(--dark-color);
   letter-spacing: var(--letter-spacing-md);
   text-transform: uppercase;
   font-weight: 500;
   font-size: var(--project-type-font-size);
-  margin-bottom: 18px;
+  margin-bottom: var(--box-margin-sm);
 }
 
 /* Project title styling */
 .portfolio-box .portfolio-text h4 {
   color: rgb(var(--dark-color));
   font-weight: 600;
-  font-size: var(--project-title-font-size);
-  margin-bottom: 20px;
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--box-margin-sm);
 }
 
 /* Mobile-specific styles for portfolio section */
@@ -55,8 +48,8 @@
 
   /* Adjust project title size for mobile */
   .portfolio-box .portfolio-text h4 {
-    font-size: var(--project-title-font-size-mobile);
-    margin-bottom: 10px;
+    font-size: var(--font-size-md);
+    margin-bottom: var(--box-margin-xs);
   }
 
   /* Center-align the action button */
