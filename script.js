@@ -244,6 +244,75 @@ document.addEventListener("DOMContentLoaded", function () {
     skillsView.insertAdjacentHTML("beforeend", skillBox);
   });
 
+  // Initialize skill box highlight functionality
+  function initSkillBoxHighlight() {
+    const skillBoxes = Array.from(document.querySelectorAll('.skill-box .feature-box'));
+    let availableIndices = []; // Array to track unused indices
+    let currentTimeout = null;
+
+    // Function to reset available indices when all boxes have been used
+    function resetAvailableIndices() {
+      availableIndices = Array.from({ length: skillBoxes.length }, (_, i) => i);
+      shuffleArray(availableIndices); // Reuse existing shuffleArray function
+    }
+
+    // Initialize the indices array
+    resetAvailableIndices();
+
+    // Function to highlight a random skill box
+    function highlightRandomSkill() {
+      // Remove active class from all skill boxes
+      skillBoxes.forEach(box => box.classList.remove('active-slide'));
+
+      // If we've used all boxes, reset the cycle
+      if (availableIndices.length === 0) {
+        resetAvailableIndices();
+      }
+
+      // Pick and remove a random index from available indices
+      const randomIndex = availableIndices.pop();
+      
+      // Add active class to the selected box
+      skillBoxes[randomIndex].classList.add('active-slide');
+
+      // Schedule the next highlight
+      currentTimeout = setTimeout(highlightRandomSkill, 3000); // Adjust timing as needed (currently 3 seconds)
+    }
+
+    // Start the highlight cycle
+    highlightRandomSkill();
+
+    // Optional: Pause on hover
+    skillBoxes.forEach(box => {
+      box.addEventListener('mouseenter', () => {
+        if (currentTimeout) {
+          clearTimeout(currentTimeout);
+        }
+        // Remove active class from all boxes
+        skillBoxes.forEach(b => b.classList.remove('active-slide'));
+        // Add active class to hovered box
+        box.classList.add('active-slide');
+      });
+
+      box.addEventListener('mouseleave', () => {
+        // Remove active class from hovered box
+        box.classList.remove('active-slide');
+        // Resume the cycle
+        highlightRandomSkill();
+      });
+    });
+
+    // Clean up function
+    return function cleanup() {
+      if (currentTimeout) {
+        clearTimeout(currentTimeout);
+      }
+    };
+  }
+
+  // Initialize the skill box highlight feature
+  const cleanupSkillHighlight = initSkillBoxHighlight();
+
   let swiper = null;
   const mobileBreakpoint = 768; // Adjust this value based on your CSS breakpoint
 
@@ -258,35 +327,41 @@ document.addEventListener("DOMContentLoaded", function () {
         autoplay: {
           delay: 5000,
           disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+          waitForTransition: true
         },
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
         },
-        // Add event handlers for active slide management
         on: {
           init: function () {
-            // Set initial active slide on Swiper initialization
             updateActiveSlide(this);
           },
           slideChangeTransitionStart: function () {
-            // Remove active class from all slides at the start of transition
             removeActiveClassFromSlides();
           },
           slideChangeTransitionEnd: function () {
-            // Add active class to new active slide after transition
             updateActiveSlide(this);
-          },
-          touchStart: function () {
-            // Handle manual swipe start
-            if (this.autoplay.running) {
-              this.autoplay.stop();
-            }
-          },
-          touchEnd: function () {
-            // Resume autoplay after manual swipe if it was running
+            // Ensure autoplay is running
             if (!this.autoplay.running) {
               this.autoplay.start();
+            }
+          },
+          touchStart: function () {
+            // Temporarily pause autoplay during manual interaction
+            this.autoplay.pause();
+          },
+          touchEnd: function () {
+            // Resume autoplay after a short delay
+            setTimeout(() => {
+              this.autoplay.resume();
+            }, 100);
+          },
+          beforeDestroy: function () {
+            // Clean up autoplay before destroying
+            if (this.autoplay.running) {
+              this.autoplay.stop();
             }
           }
         },
@@ -326,6 +401,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Reinitialize Swiper on window resize
   window.addEventListener("resize", initSwiper);
+
+  // Clean up on window unload
+  window.addEventListener('unload', () => {
+    if (cleanupSkillHighlight) {
+      cleanupSkillHighlight();
+    }
+  });
 });
 
 // Project Swiper styles
