@@ -247,6 +247,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let swiper = null;
   const mobileBreakpoint = 768; // Adjust this value based on your CSS breakpoint
 
+  // Initialize Swiper for mobile view with active slide tracking
   function initSwiper() {
     if (window.innerWidth < mobileBreakpoint && !swiper) {
       swiper = new Swiper(".ftb-mobile-view", {
@@ -262,10 +263,61 @@ document.addEventListener("DOMContentLoaded", function () {
           el: ".swiper-pagination",
           clickable: true,
         },
+        // Add event handlers for active slide management
+        on: {
+          init: function () {
+            // Set initial active slide on Swiper initialization
+            updateActiveSlide(this);
+          },
+          slideChangeTransitionStart: function () {
+            // Remove active class from all slides at the start of transition
+            removeActiveClassFromSlides();
+          },
+          slideChangeTransitionEnd: function () {
+            // Add active class to new active slide after transition
+            updateActiveSlide(this);
+          },
+          touchStart: function () {
+            // Handle manual swipe start
+            if (this.autoplay.running) {
+              this.autoplay.stop();
+            }
+          },
+          touchEnd: function () {
+            // Resume autoplay after manual swipe if it was running
+            if (!this.autoplay.running) {
+              this.autoplay.start();
+            }
+          }
+        },
       });
     } else if (window.innerWidth >= mobileBreakpoint && swiper) {
       swiper.destroy(true, true);
       swiper = null;
+    }
+  }
+
+  // Function to remove active class from all slides
+  function removeActiveClassFromSlides() {
+    const slides = document.querySelectorAll('.ftb-mobile-view .swiper-slide .feature-box');
+    slides.forEach(slide => {
+      slide.classList.remove('active-slide');
+    });
+  }
+
+  // Function to update active slide styling
+  function updateActiveSlide(swiperInstance) {
+    // Remove active class from all slides first
+    removeActiveClassFromSlides();
+    
+    // Add active class only to the current active slide
+    const activeIndex = swiperInstance.realIndex;
+    const activeSlide = swiperInstance.slides.filter(slide => 
+      slide.getAttribute('data-swiper-slide-index') == activeIndex
+    )[0];
+    
+    if (activeSlide) {
+      activeSlide.querySelector('.feature-box').classList.add('active-slide');
     }
   }
 
