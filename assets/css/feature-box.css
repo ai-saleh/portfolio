@@ -13,13 +13,13 @@
 /* Hover effect and active slide styling for feature boxes */
 .feature-box.active-slide {
   box-shadow: var(--box-shadow-offset) var(--box-shadow-offset) 0 -1px rgb(var(--dark-color));
-  transform: translate(-4px, -4px);
+  /* transform: translate(-4px, -4px); */
 }
 
 @media (min-width: 768px) {
   .feature-box:hover {
     box-shadow: var(--box-shadow-offset) var(--box-shadow-offset) 0 -1px rgb(var(--dark-color));
-    transform: translate(-4px, -4px);
+    /* transform: translate(-4px, -4px); */
   }
 }
 

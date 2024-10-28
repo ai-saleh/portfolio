@@ -35,7 +35,7 @@ class tmpNavbar extends HTMLElement {
   
           <!-- Download CV -->
           <div class="ms-auto d-none d-lg-block">
-            <a class="colored-btn" href="https://1drv.ms/b/s!AlnurQdtf7Qwg4JT5eGAMArcWeFqew?e=lQaR9r">Download CV</a>
+            <a class="colored-btn" href="#">Download CV</a>
           </div>
   
           <!-- Menu Toggle -->

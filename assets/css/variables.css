@@ -33,9 +33,9 @@
   /* Typography - Display & Headings */
   --colossal-font-size: 5rem;    /* 80px */
   --immense-font-size: 4.375rem; /* 70px */
-  --very-huge-font-size: 3.75rem;/* 60px */
+  --very-huge-font-size: 3.5rem; /* 60px */
   --huge-font-size: 3.125rem;    /* 50px */
-  --big-font-size: 2.8125rem;    /* 45px */
+  --big-font-size: 2.875rem;     /* 45px */
 
   /* Typography - Base Sizes */
   --font-size-xl: 2.375rem;      /* 38px */
@@ -51,6 +51,7 @@
   --letter-spacing-sm: 2px;
 
   /* Spacing - Box Margins */
+  --box-margin-xl: 2.5rem;
   --box-margin-lg: 2rem;         /* 32px */
   --box-margin-md: 1.5rem;       /* 24px */
   --box-margin-sm: 1rem;         /* 16px */
@@ -88,6 +89,7 @@
   --padding-thickness: 9px;
   --mid-padding-thickness: 6px;
   --tiny-padding-thickness: 4px;
+  --minute-padding-thickness: 2px;
 
   /* Borders & Dividers */
   --huge-border-width: 24px;

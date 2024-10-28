@@ -10,7 +10,7 @@
 /* Hover effect for portfolio images */
 .portfolio-box .portfolio-img:hover {
   box-shadow: var(--box-shadow-offset) var(--box-shadow-offset) 0 -1px rgb(var(--dark-color));
-  transform: translate(-4px, -4px);
+  /* transform: translate(-4px, -4px); */
 }
 
 /* Project type label styling */

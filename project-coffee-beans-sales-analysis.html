@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project: Coffee Beans Sales Analysis</title>
+
+  <!-- Icons -->
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/variables.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/css/github-markdown-light.css">
+  <link rel="stylesheet" href="assets/css/github-markdown-custom.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/anims.css" />
+  <link rel="stylesheet" href="assets/css/feature-box.css" />
+  <link rel="stylesheet" href="assets/css/projects.css" />
+  <link rel="stylesheet" href="assets/css/contact-form.css" />
+  <link rel="stylesheet" href="assets/css/swiper.css" />
+</head>
+
+<body>
+
+  <!-- Header -->
+  <tmp-navbar></tmp-navbar>
+
+  <!-- Main -->
+  <main>
+
+    <!-- Project Container -->
+    <section id="project-coffee-beans-sales-analysis" class="section">
+      <div class="container">
+
+        <!-- Breadcrumb Navbar -->
+        <div class="nav-breadcrumb">
+          <nav aria-label="breadcrumb" class="text-center text-lg-start">
+            <ol class="breadcrumb d-inline-flex p-2 p-lg-3 mt-3">
+              <li class="breadcrumb-item"><a href="./index.html#home" class="text-decoration-none">Home</a></li>
+              <li class="breadcrumb-item"><a href="./index.html#projects" class="text-decoration-none">Projects</a></li>
+              <li class="breadcrumb-item active d-none d-lg-inline-block" aria-current="page">Sales Analysis</li>
+            </ol>
+          </nav>
+        </div>
+
+        <!-- Markdown Content -->
+        <div class="markdown-container">
+          <div id="markdown-content" class="markdown-body p-2 p-lg-3">
+            <!-- Markdown content will be rendered here -->
+          </div>
+        </div>
+
+        <!-- Button Navigation -->
+        <div class="col-12 p-2 p-lg-3">
+          <div class="d-flex justify-content-between">
+            <a href="#" class="colored-btn mt-1">Prev. Project</a>
+            <a href="#" class="colored-btn mt-1">Next Project</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <tmp-contact></tmp-contact>
+
+    <!-- Footer -->
+    <tmp-footer></tmp-footer>
+
+  </main>
+
+  <!-- Markdown Parsing -->
+  <script type="module">
+    import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+
+    // Fetch markdown from GitHub
+    fetch('#')
+      .then(response => response.text())
+      .then(markdown => {
+        document.getElementById('markdown-content').innerHTML =
+          marked.parse(markdown);
+      })
+      .catch(error => {
+        console.error('Error fetching markdown:', error);
+        document.getElementById('markdown-content').innerHTML =
+          'Error loading markdown content';
+      });
+  </script>
+
+  <!-- Scripts -->
+  <script src="assets/js/bootstrap.bundle.js"></script>
+  <script src="assets/js/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/typed.umd.js"></script>
+  <script src="assets/js/swiper-bundle.min.js"></script>
+  <script src="assets/js/scrollIt.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/template-loader.js"></script>
+
+</body>
+
+</html>

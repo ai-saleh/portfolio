@@ -1,0 +1,30 @@
+/* Body styling */
+.markdown-body {
+    font-family: "Afacad Flux", sans-serif;
+}
+
+/* Code Blocks */
+.markdown-body pre {
+    border-radius: 0;
+}
+
+.markdown-body pre code {
+    color: initial; /* Resets the color for code inside pre */
+}
+
+.markdown-body code {
+    color: rgb(var(--primary-color)); /* Applies color to all code elements */
+    font-family: "Source Code Pro", monospace;
+    border-radius: 0;
+}
+
+/* Scrollbar styling */
+.markdown-body table::-webkit-scrollbar,
+.markdown-body pre::-webkit-scrollbar {
+    height: var(--big-border-width);
+}
+
+.markdown-body table::-webkit-scrollbar-thumb,
+.markdown-body pre::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--primary-color), 0.5);
+}
