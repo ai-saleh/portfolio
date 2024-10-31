@@ -41,9 +41,14 @@
             <ol class="breadcrumb d-inline-flex p-2 p-lg-3 mt-3">
               <li class="breadcrumb-item"><a href="./index.html#home" class="text-decoration-none">Home</a></li>
               <li class="breadcrumb-item"><a href="./index.html#projects" class="text-decoration-none">Projects</a></li>
-              <li class="breadcrumb-item active d-none d-lg-inline-block" aria-current="page">Sales Analysis</li>
+              <li class="breadcrumb-item active d-none d-lg-inline-block" aria-current="page">Coffee Beans Sales Analysis</li>
             </ol>
           </nav>
+        </div>
+
+        <!-- Dashboard -->
+        <div class="iframe-container d-none d-lg-block">
+          <iframe class="responsive-iframe" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=30B47F6D07ADEE59%2149977&authkey=%21AD13hf7Ehda3qUg&em=2&wdHideGridlines=True&wdHideHeaders=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
         </div>
 
         <!-- Markdown Content -->
@@ -77,7 +82,7 @@
     import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 
     // Fetch markdown from GitHub
-    fetch('#')
+    fetch('https://raw.githubusercontent.com/ai-saleh/coffee-sales-analysis/refs/heads/main/README.md')
       .then(response => response.text())
       .then(markdown => {
         document.getElementById('markdown-content').innerHTML =

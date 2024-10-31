@@ -123,4 +123,7 @@
 
   /* Animations */
   --trn-ease-all: all 0.3s ease;
+
+  /* Dashboards */
+  --iframe-height: 864px;
 }
