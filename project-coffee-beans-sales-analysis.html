@@ -5,6 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Project: Coffee Beans Sales Analysis</title>
+  <link rel="icon" type="image/svg+xml" href="assets/svg/icon/data-icon-favicon.svg">
 
   <!-- Icons -->
   <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
@@ -58,7 +59,7 @@
         <div class="col-12 p-2 p-lg-3">
           <div class="d-flex justify-content-between">
             <a href="#" class="colored-btn mt-1">Prev. Project</a>
-            <a href="./project-test.html" class="colored-btn mt-1">Next Project</a>
+            <a href="#" class="colored-btn mt-1">Next Project</a>
           </div>
         </div>
 
@@ -75,10 +76,12 @@
 
   <!-- Markdown Parsing -->
   <script src="https://cdn.jsdelivr.net/npm/markdown-it@13.0.2/dist/markdown-it.min.js"></script>
-  <script src="assets/js/markdown-loader.js"></script>
+  <script src="assets/js/enhanced-markdown-loader.js"></script>
   <script>
-    // Initialize the loader with specific README URL
-    initMarkdownLoader('https://raw.githubusercontent.com/ai-saleh/coffee-sales-analysis/main/README.md');
+    // Listen for the loader to be ready
+    document.addEventListener('markdownLoaderReady', function () {
+      initMarkdownLoader('https://raw.githubusercontent.com/ai-saleh/coffee-sales-analysis/refs/heads/main/README.md', 'markdown-content');
+    });
   </script>
 
   <!-- Scripts -->

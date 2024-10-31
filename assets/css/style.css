@@ -316,9 +316,13 @@ main {
   object-fit: cover;
   transition: var(--trn-ease-all);
   border: var(--border-width) solid rgb(var(--dark-color));
-  box-shadow: var(--box-shadow-offset) var(--box-shadow-offset) 0 -1px rgb(var(--dark-color));
+  box-shadow: none;
   position: relative;
-  z-index: -2;
+  /* z-index: -2; */
+}
+
+.home-image img:hover {
+  box-shadow: var(--box-shadow-offset) var(--box-shadow-offset) 0 -1px rgb(var(--dark-color));
 }
 
 @media (max-width: 1199px) {
