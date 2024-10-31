@@ -123,6 +123,8 @@
 
   /* Animations */
   --trn-ease-all: all 0.3s ease;
+  --spinner-linear: spin 1s linear infinite;
+  --spinner-ease-in-out: opacity 0.5s ease-in-out;
 
   /* Dashboards */
   --iframe-height: 864px;

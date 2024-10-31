@@ -41,14 +41,10 @@
             <ol class="breadcrumb d-inline-flex p-2 p-lg-3 mt-3">
               <li class="breadcrumb-item"><a href="./index.html#home" class="text-decoration-none">Home</a></li>
               <li class="breadcrumb-item"><a href="./index.html#projects" class="text-decoration-none">Projects</a></li>
-              <li class="breadcrumb-item active d-none d-lg-inline-block" aria-current="page">Coffee Beans Sales Analysis</li>
+              <li class="breadcrumb-item active d-none d-lg-inline-block" aria-current="page">Coffee Beans Sales
+                Analysis</li>
             </ol>
           </nav>
-        </div>
-
-        <!-- Dashboard -->
-        <div class="iframe-container d-none d-lg-block">
-          <iframe class="responsive-iframe" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=30B47F6D07ADEE59%2149977&authkey=%21AD13hf7Ehda3qUg&em=2&wdHideGridlines=True&wdHideHeaders=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
         </div>
 
         <!-- Markdown Content -->
@@ -62,7 +58,7 @@
         <div class="col-12 p-2 p-lg-3">
           <div class="d-flex justify-content-between">
             <a href="#" class="colored-btn mt-1">Prev. Project</a>
-            <a href="#" class="colored-btn mt-1">Next Project</a>
+            <a href="./project-test.html" class="colored-btn mt-1">Next Project</a>
           </div>
         </div>
 
@@ -78,21 +74,11 @@
   </main>
 
   <!-- Markdown Parsing -->
-  <script type="module">
-    import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
-
-    // Fetch markdown from GitHub
-    fetch('https://raw.githubusercontent.com/ai-saleh/coffee-sales-analysis/refs/heads/main/README.md')
-      .then(response => response.text())
-      .then(markdown => {
-        document.getElementById('markdown-content').innerHTML =
-          marked.parse(markdown);
-      })
-      .catch(error => {
-        console.error('Error fetching markdown:', error);
-        document.getElementById('markdown-content').innerHTML =
-          'Error loading markdown content';
-      });
+  <script src="https://cdn.jsdelivr.net/npm/markdown-it@13.0.2/dist/markdown-it.min.js"></script>
+  <script src="assets/js/markdown-loader.js"></script>
+  <script>
+    // Initialize the loader with specific README URL
+    initMarkdownLoader('https://raw.githubusercontent.com/ai-saleh/coffee-sales-analysis/main/README.md');
   </script>
 
   <!-- Scripts -->

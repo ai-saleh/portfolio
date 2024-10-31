@@ -3,6 +3,13 @@
     font-family: "Afacad Flux", sans-serif;
 }
 
+/* Centered H1 on mobile/tablet */
+@media (max-width: 991px) {
+    .markdown-body h1 {
+        text-align: center;
+    }
+}
+
 /* Code Blocks */
 .markdown-body pre {
     border-radius: 0;
@@ -27,4 +34,41 @@
 .markdown-body table::-webkit-scrollbar-thumb,
 .markdown-body pre::-webkit-scrollbar-thumb {
     background-color: rgba(var(--primary-color), 0.5);
+}
+
+/* Loading Styles */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--mid-height-sm);
+}
+
+.loading-spinner {
+    width: var(--mid-height-sm);
+    height: var(--mid-height-sm);
+    border: var(--border-width) solid rgb(var(--bck-dark-color));
+    border-top: var(--border-width) solid rgb(var(--primary-color));
+    border-radius: 50%;
+    animation: var(--spinner-linear);
+    margin-bottom: var(--box-margin-lg);
+}
+
+.loading-message {
+    color: rgb(var(--grey-color));
+    font-style: italic;
+    opacity: 1;
+    transition: var(--spinner-ease-in-out);
+    text-align: center;
+    margin: 0;
+    min-height: 1.5em; /* Prevents layout shift during message changes */
+}
+
+.loading-message.fade {
+    opacity: 0;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
