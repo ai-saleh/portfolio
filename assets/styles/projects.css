@@ -1,0 +1,77 @@
+/* Projects section styling */
+
+/* Portfolio image container styling */
+.portfolio-box .portfolio-img {
+  position: relative;
+  transition: var(--trn-ease-all);
+  border: var(--border-width) solid rgb(var(--dark-color));
+}
+
+/* Hover effect for portfolio images */
+.portfolio-box .portfolio-img:hover {
+  box-shadow: var(--box-shadow-offset) var(--box-shadow-offset) 0 -1px rgb(var(--dark-color));
+  /* transform: translate(-4px, -4px); */
+}
+
+/* Project type label styling */
+.portfolio-box .portfolio-text span {
+  display: inline-block;
+  padding: var(--box-padding-xs) var(--box-padding-sm);
+  background: rgb(var(--bck-dark-color));
+  color: var(--dark-color);
+  letter-spacing: var(--letter-spacing-md);
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: var(--project-type-font-size);
+  margin-bottom: var(--box-margin-sm);
+}
+
+/* Project title styling */
+.portfolio-box .portfolio-text h4 {
+  color: rgb(var(--dark-color));
+  font-weight: 600;
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--box-margin-sm);
+}
+
+/* Mobile-specific styles for portfolio section */
+@media (max-width: 991px) {
+  /* Maintain left alignment for the overall text container */
+  .portfolio-box .portfolio-text {
+    text-align: left;
+  }
+
+  /* Center-align project type and title */
+  .portfolio-box .portfolio-text span,
+  .portfolio-box .portfolio-text h4 {
+    text-align: center;
+  }
+
+  /* Adjust project title size for mobile */
+  .portfolio-box .portfolio-text h4 {
+    font-size: var(--font-size-md);
+    margin-bottom: var(--box-margin-xs);
+  }
+
+  /* Center-align the action button */
+  .portfolio-box .portfolio-text .colored-btn {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Ensure the project type span is full-width and centered */
+  .portfolio-box .portfolio-text > span:first-of-type {
+    display: block;
+    text-align: center;
+  }
+}
+
+.nav-breadcrumb .breadcrumb {
+  color: var(--dark-color);
+  letter-spacing: var(--letter-spacing-md);
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: var(--project-type-font-size);
+}

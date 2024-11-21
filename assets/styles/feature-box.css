@@ -1,0 +1,213 @@
+/* Feature box styling */
+
+/* General feature box styles */
+.feature-box {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--box-padding-lg);
+  height: var(--box-height-xl); /* Set a fixed height - adjust as needed */
+  border: var(--border-width) solid rgb(var(--dark-color));
+  transition: var(--trn-ease-all);
+}
+
+/* Hover effect and active slide styling for feature boxes */
+.feature-box.active-slide {
+  box-shadow: var(--box-shadow-offset) var(--box-shadow-offset) 0 -1px rgb(var(--dark-color));
+  /* transform: translate(-4px, -4px); */
+}
+
+@media (min-width: 768px) {
+  .feature-box:hover {
+    box-shadow: var(--box-shadow-offset) var(--box-shadow-offset) 0 -1px rgb(var(--dark-color));
+    /* transform: translate(-4px, -4px); */
+  }
+}
+
+/* Icon styling within feature boxes */
+.feature-box .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  min-width: var(--icon-size); /* Prevent icon from shrinking */
+  margin-right: var(--box-margin-md); /* Add space between icon and content */
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-xs);
+  color: rgb(var(--dark-color));
+  background: rgb(var(--white-color));
+  border: var(--border-width) solid rgb(var(--dark-color));
+}
+
+/* Content area styling */
+.feature-box .content {
+  flex-grow: 1; /* Allow content to fill remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  overflow: hidden; /* In case of content overflow */
+}
+
+/* Heading styles within feature boxes */
+.feature-box h5 {
+  margin-bottom: var(--box-margin-xs);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: rgb(var(--dark-color));
+}
+
+/* Paragraph styles within feature boxes */
+.feature-box p {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: rgb(var(--dark-color));
+}
+
+/* Styles for desktop/mobile views and Swiper */
+/* Desktop view layout */
+.ftb-desktop-view {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Hide mobile view by default */
+.ftb-mobile-view {
+  display: none;
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 1399px) {
+  .feature-box {
+    padding: var(--box-padding-sm);
+    height: var(--box-height-md);
+  }
+
+  .feature-box p {
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (max-width: 1199px) {
+  .feature-box {
+    height: var(--box-height-lg);
+  }
+}
+
+@media (max-width: 991px) {
+  .feature-box {
+    height: var(--box-height-md);
+  }
+}
+
+@media (max-width: 767px) {
+  /* Switch views for mobile devices */
+  .ftb-desktop-view {
+    display: none;
+  }
+
+  .ftb-mobile-view {
+    display: block;
+  }
+
+  /* Adjust feature box for mobile */
+  .feature-box {
+    padding: var(--box-padding-sm);
+    height: var(
+      --box-height-md
+    ); /* Smaller height for mobile - adjust as needed */
+  }
+
+  .feature-box h5 {
+    font-size: var(--font-size-sm); /* Smaller font size for mobile */
+  }
+
+  /* Swiper-specific mobile styles */
+  .swiper-slide {
+    transition: transform 0.3s ease;
+  }
+
+  .swiper-slide-active .feature-box {
+    opacity: 1;
+  }
+
+  .swiper-slide:not(.swiper-slide-active) .feature-box {
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 479px) {
+  .feature-box {
+    height: var(--box-height-lg); /* Adjust height for smaller mobile screens */
+  }
+}
+
+@media (max-width: 383px) {
+  .feature-box {
+    height: var(
+      --box-height-lg
+    ); /* Adjust height for smallest mobile screens */
+  }
+}
+
+/* Skill boxes styling - a variation of feature boxes */
+.feature-box.skill {
+  /* Adjust size */
+  padding: var(--form-padding-md);
+  height: auto;
+
+  /* Adjust text alignment */
+  align-items: center;
+}
+
+.feature-box.skill .icon {
+  /* Modify icon size or appearance for skill boxes */
+  width: var(--tiny-icon-size);
+  height: var(--tiny-icon-size);
+  min-width: var(--tiny-icon-size); /* Prevent icon from shrinking */
+}
+
+.feature-box.skill h5 {
+  /* Adjust title style for skill boxes */
+  margin: 0;
+}
+
+/* Further adjustments for skill boxes on smaller screens */
+@media (max-width: 1199px) {
+  .feature-box.skill h5 {
+    font-size: var(
+      --font-size-xs
+    ); /* Smaller font size for skill box titles on medium screens */
+  }
+}
+
+@media (min-width: 768px) {
+  .skill-box > div > div:nth-child(10) {
+    display: none;
+  }
+}
+
+/* Colors for each box - provides visual variety */
+.ftb-bg-1 {
+  background-color: blanchedalmond;
+}
+.ftb-bg-2 {
+  background-color: bisque;
+}
+.ftb-bg-3 {
+  background-color: mistyrose;
+}
+.ftb-bg-4 {
+  background-color: navajowhite;
+}
+.ftb-bg-5 {
+  background-color: moccasin;
+}
+.ftb-bg-6 {
+  background-color: oldlace;
+}
+.ftb-bg-7 {
+  background-color: peachpuff;
+}
+.ftb-bg-8 {
+  background-color: papayawhip;
+}

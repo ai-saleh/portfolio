@@ -1,0 +1,70 @@
+/* General Swiper styles */
+.swiper {
+  position: relative;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: var(--swiper-pagination-bottom);
+  left: 0;
+  right: 0;
+}
+
+.swiper-pagination-bullet {
+  width: var(--swiper-pagination-bullet-size);
+  height: var(--swiper-pagination-bullet-size);
+  background: rgba(var(--dark-color), 0.5);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: rgb(var(--dark-color));
+}
+
+/* Project Swiper styles */
+.project-swiper {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(var(--dark-color));
+}
+
+.project-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  background: #fff;
+}
+
+.project-swiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Feature box Swiper styles */
+@media (max-width: 767px) {
+  .ftb-mobile-view .swiper-slide {
+    width: 80%;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+  }
+
+  .ftb-mobile-view .swiper-slide-active {
+    opacity: 1;
+  }
+}
+
+/* Custom positioning classes */
+.swiper-pagination-top {
+  /* top: 20px; */
+  bottom: auto;
+}
+
+.swiper-pagination-middle {
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+}
